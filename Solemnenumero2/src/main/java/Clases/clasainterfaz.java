@@ -84,6 +84,7 @@ public class clasainterfaz  {
             System.out.println("Cambiar productos");
             System.out.println("Generar productos");
             System.out.println("Generar compra");
+            System.out.println("Revisar Oferta");
             System.out.println("Modificar cantidades");
             System.out.println("Imprimir compra");
             System.out.println("Salir");
@@ -198,17 +199,33 @@ public class clasainterfaz  {
                             break;
                     }
                     break;
+                case "Revisar oferta":
+                    int pepitotierras;
+                    int pepitotierras2;
+                    for (int i = 0; i < objetosenventa.size(); i++) {
+                        pepitotierras = objetosenventa.get(i).getCodigo();
+                        for (int j = 0; j < objetosenventa.size(); j++) {
+                            pepitotierras2 = objetosenventa.get(j).getCodigo();
+                            if (objetosenventa.get(j).getDescripcion().equals("ofertas") && pepitotierras == pepitotierras2 && !objetosenventa.get(i).getDescripcion().equals("ofertas") && objetosenventa.get(j).getCodigo() >= 1 && objetosenventa.get(i).getCodigo() >= 1){
+                                objetosenventa.get(i).setCantidadencarrito(0);
+                                System.out.println("Oferta encontrada, no ofertas sacadas");
+
+                            }
+                        }
+                        System.out.println(objetosenventa.get(i).getCantidadencarrito());
+                    }
+                    break;
                 case "Modificar cantidades":
                     for (int i = 0; i < objetosenventa.size(); i++) {
                         System.out.println(i);
                         System.out.println("|Precio: " + objetosenventa.get(i).getPrecio() + " |Cantidad en carrito: " + objetosenventa.get(i).getCantidadencarrito());
                     }
-                        System.out.println("Indique el numero del objeto que desea editar");
-                        inputuserint = scanObject.nextInt();
-                        System.out.println("Usted coloco" + inputuserint);
-                        System.out.println("Ingrese nueva cantidad en carrito");
-                        inputuseranno = scanObject.nextInt();
-                        objetosenventa.get(inputuserint).setCantidadencarrito(inputuseranno);
+                    System.out.println("Indique el numero del objeto que desea editar");
+                    inputuserint = scanObject.nextInt();
+                    System.out.println("Usted coloco" + inputuserint);
+                    System.out.println("Ingrese nueva cantidad en carrito");
+                    inputuseranno = scanObject.nextInt();
+                    objetosenventa.get(inputuserint).setCantidadencarrito(inputuseranno);
                     break;
                 case "Imprimir compra":
                     preciodelacompra = 0;
