@@ -1,9 +1,0 @@
-Datos de compraM
- Precio: 10000 Cantidad: 20 Total: 400200
- Precio: 10 Cantidad: 20 Total: 400400
-
-Descripcion : Javier gonzales martinez Dia: 1 Mes: 1 Año: 2020 Comentario: null TOTAL: 400400
-producto de aseo en compra. Traer bolsas
-La compra contiene congelados, refrigerar
-
-###################################################################################
